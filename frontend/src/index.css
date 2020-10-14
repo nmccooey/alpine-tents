@@ -9,3 +9,8 @@ h3 {
 .rating span {
   margin: 0.1rem;
 }
+
+footer {
+  background-color: #8f8c84;
+  color: white;
+}

@@ -2,7 +2,7 @@ const products = [
   {
     _id: "1",
     name: "The North Face Stormbreak 2 Tent",
-    image: "/images/stormbreak-2-tent.png",
+    image: "/images/the-north-face-stormbreak-2-tent.jpeg",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
@@ -22,29 +22,29 @@ const products = [
   },
   {
     _id: "2",
-    name: "The North Face Stormbreak 2 Tent",
-    image: "/images/stormbreak-2-tent.png",
+    name: "Big Agnes Tiger Wall UL2 Tent",
+    image: "/images/big-agnes-tiger-wall-ul2-tent.jpeg",
     description:
-      "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
-    brand: "The North Face",
+      "An exceptionally lightweight 3-season backcountry shelter from Big Agnes, the Big Agnes Tiger Wall UL2 tent has 2 doors and 2 vestibules to make tent life a little easier.",
+    brand: "Big Agnes",
     season: "3-season",
     capacity: "2-person",
-    packed_weight: "5 lbs. 14.2 oz.",
-    packed_size: "7 x 22 inches",
-    floor_dimensions: "87 x 50 inches",
-    peak_height: "43 inches",
+    packed_weight: "2 lbs. 8 oz.",
+    packed_size: "5.5 x 18 inches",
+    floor_dimensions: "86 x 52/42 (L x W head/foot) inches",
+    peak_height: "39 inches",
     door_count: "2 doors",
-    canopy_fabric: "75-denier polyester taffeta",
-    floor_fabric: "68-denier polyester, 3000mm polyurethane coating",
-    price: 159.99,
-    countInStock: 10,
-    rating: 4.5,
-    numReviews: 12,
+    canopy_fabric: "Breathable ripstop nylon/polyester mesh",
+    floor_fabric: "Silicone-treated ripstop nylon",
+    price: 399.99,
+    countInStock: 8,
+    rating: 4,
+    numReviews: 9,
   },
   {
     _id: "3",
     name: "The North Face Stormbreak 2 Tent",
-    image: "/images/stormbreak-2-tent.png",
+    image: "/images/the-north-face-stormbreak-2-tent.jpeg",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
@@ -65,7 +65,7 @@ const products = [
   {
     _id: "4",
     name: "The North Face Stormbreak 2 Tent",
-    image: "/images/stormbreak-2-tent.png",
+    image: "/images/the-north-face-stormbreak-2-tent.jpeg",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
@@ -86,7 +86,7 @@ const products = [
   {
     _id: "5",
     name: "The North Face Stormbreak 2 Tent",
-    image: "/images/stormbreak-2-tent.png",
+    image: "/images/the-north-face-stormbreak-2-tent.jpeg",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
@@ -107,7 +107,7 @@ const products = [
   {
     _id: "6",
     name: "The North Face Stormbreak 2 Tent",
-    image: "/images/stormbreak-2-tent.png",
+    image: "/images/the-north-face-stormbreak-2-tent.jpeg",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
