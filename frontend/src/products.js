@@ -2,7 +2,7 @@ const products = [
   {
     _id: "1",
     name: "The North Face Stormbreak 2 Tent",
-    image: "images/stormbreak-2-tent.png",
+    image: "/images/stormbreak-2-tent.png",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
@@ -23,7 +23,7 @@ const products = [
   {
     _id: "2",
     name: "The North Face Stormbreak 2 Tent",
-    image: "images/stormbreak-2-tent.png",
+    image: "/images/stormbreak-2-tent.png",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
@@ -44,7 +44,7 @@ const products = [
   {
     _id: "3",
     name: "The North Face Stormbreak 2 Tent",
-    image: "images/stormbreak-2-tent.png",
+    image: "/images/stormbreak-2-tent.png",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
@@ -65,7 +65,7 @@ const products = [
   {
     _id: "4",
     name: "The North Face Stormbreak 2 Tent",
-    image: "images/stormbreak-2-tent.png",
+    image: "/images/stormbreak-2-tent.png",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
@@ -86,7 +86,7 @@ const products = [
   {
     _id: "5",
     name: "The North Face Stormbreak 2 Tent",
-    image: "images/stormbreak-2-tent.png",
+    image: "/images/stormbreak-2-tent.png",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
@@ -107,7 +107,7 @@ const products = [
   {
     _id: "6",
     name: "The North Face Stormbreak 2 Tent",
-    image: "images/stormbreak-2-tent.png",
+    image: "/images/stormbreak-2-tent.png",
     description:
       "With large doors and 2 multi-configuration vestibules, The North Face Stormbreak 2 tent offers easy access and a great view of the great outdoors for 2 campers through 3 seasons.",
     brand: "The North Face",
@@ -122,7 +122,7 @@ const products = [
     floor_fabric: "68-denier polyester, 3000mm polyurethane coating",
     price: 159.99,
     countInStock: 10,
-    rating: 4.5,
+    rating: 2.5,
     numReviews: 12,
   },
 ];
