@@ -8,10 +8,7 @@ const ProductScreen = ({ match }) => {
   const product = products.find(p => p._id === match.params.id);
   return (
     <>
-      <Link className='btn btn-dark my-3' to='/'>
-        Go Back
-      </Link>
-      <Row>
+      <Row className='mt-5'>
         <Col md={4}>
           <Image src={product.image} alt={product.name} fluid />
         </Col>
@@ -96,6 +93,9 @@ const ProductScreen = ({ match }) => {
           </Card>
         </Col>
       </Row>
+      <Link className='btn btn-dark my-3' to='/'>
+        Go Back
+      </Link>
     </>
   );
 };
