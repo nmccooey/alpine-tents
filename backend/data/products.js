@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: "1",
     name: "The North Face Stormbreak 2 Tent",
     image: "/images/the-north-face-stormbreak-2-tent.jpeg",
     description:
@@ -21,7 +20,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "2",
     name: "NEMO Dagger 2 Tent",
     image: "/images/nemo-dagger-2-tent.jpeg",
     description:
@@ -42,7 +40,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "3",
     name: "Big Agnes Tiger Wall UL2 Tent",
     image: "/images/big-agnes-tiger-wall-ul2-tent.jpeg",
     description:
@@ -63,7 +60,6 @@ const products = [
     numReviews: 9,
   },
   {
-    _id: "4",
     name: "Kelty Discovery Dome 4 Tent",
     image: "/images/kelty-discovery-dome-4-tent.jpeg",
     description:
@@ -84,7 +80,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "5",
     name: "Mountain Hardwear Trango 4 Tent",
     image: "/images/mountain-hardwear-trango-4-tent.jpeg",
     description:
@@ -105,7 +100,6 @@ const products = [
     numReviews: 9,
   },
   {
-    _id: "6",
     name: "Black Diamond Fitzroy Tent",
     image: "/images/black-diamond-fitzroy-tent.jpeg",
     description:
@@ -126,7 +120,6 @@ const products = [
     numReviews: 6,
   },
   {
-    _id: "7",
     name: "NEMO Chogori 3 Tent",
     image: "/images/nemo-chogori-3-tent.jpeg",
     description:
@@ -147,7 +140,6 @@ const products = [
     numReviews: 2,
   },
   {
-    _id: "8",
     name: "Big Agnes Battle Mountain 2 Tent",
     image: "/images/big-agnes-battle-mountain-2-tent.jpeg",
     description:
