@@ -55,7 +55,7 @@ const products = [
     canopy_fabric: "Breathable ripstop nylon/polyester mesh",
     floor_fabric: "Silicone-treated ripstop nylon",
     price: 399.95,
-    countInStock: 8,
+    countInStock: 0,
     rating: 4,
     numReviews: 9,
   },
