@@ -1,108 +1,116 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
 import Rating from "../components/Rating";
-import axios from "axios";
+import { listProductDetails } from "../actions/productActions";
+import Message from "../components/Message";
+import Loader from "../components/Loader";
 
 const ProductScreen = ({ match }) => {
-  const [product, setProduct] = useState({});
+  const dispatch = useDispatch();
+
+  const productDetails = useSelector(state => state.productDetails);
+  const { loading, error, product } = productDetails;
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      const { data } = await axios.get(`/api/products/${match.params.id}`);
-
-      setProduct(data);
-    };
-    fetchProduct();
-  }, [match]);
+    dispatch(listProductDetails(match.params.id));
+  }, [dispatch, match]);
 
   return (
     <>
-      <Row className='mt-5'>
-        <Col md={4}>
-          <Image src={product.image} alt={product.name} fluid />
-        </Col>
-        <Col md={5}>
-          <ListGroup variant='flush'>
-            <ListGroup.Item>
-              <h2>{product.name}</h2>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <Rating
-                value={product.rating}
-                text={`${product.numReviews} reviews`}
-              />
-            </ListGroup.Item>
-            <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
-            <ListGroup.Item>{product.description}</ListGroup.Item>
-            <ListGroup.Item>
-              <div>
-                <strong>Brand: </strong>
-                {product.brand}
-              </div>
-              <div>
-                <strong>Season: </strong>
-                {product.season}
-              </div>
-              <div>
-                <strong>Capacity: </strong>
-                {product.capacity}
-              </div>
-              <div>
-                <strong>Packed Weight: </strong>
-                {product.packed_weight}
-              </div>
-              <div>
-                <strong>Floor Dimensions: </strong>
-                {product.floor_dimensions}
-              </div>
-              <div>
-                <strong>Door Count: </strong>
-                {product.door_count}
-              </div>
-              <div>
-                <strong>Canopy Fabric: </strong>
-                {product.canopy_fabric}
-              </div>
-              <div>
-                <strong>Floor Fabric: </strong>
-                {product.floor_fabric}
-              </div>
-            </ListGroup.Item>
-          </ListGroup>
-        </Col>
-        <Col md={3}>
-          <Card>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
+      ) : (
+        <Row className='mt-5'>
+          <Col md={4}>
+            <Image src={product.image} alt={product.name} fluid />
+          </Col>
+          <Col md={5}>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <Row>
-                  <Col>Price:</Col>
-                  <Col>
-                    <strong>{product.price}</strong>
-                  </Col>
-                </Row>
+                <h2>{product.name}</h2>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Row>
-                  <Col>Status:</Col>
-                  <Col>
-                    {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
-                  </Col>
-                </Row>
+                <Rating
+                  value={product.rating}
+                  text={`${product.numReviews} reviews`}
+                />
               </ListGroup.Item>
+              <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+              <ListGroup.Item>{product.description}</ListGroup.Item>
               <ListGroup.Item>
-                <Button
-                  className='btn-block btn-dark'
-                  type='button'
-                  disabled={product.countInStock === 0}
-                >
-                  Add to Cart
-                </Button>
+                <div>
+                  <strong>Brand: </strong>
+                  {product.brand}
+                </div>
+                <div>
+                  <strong>Season: </strong>
+                  {product.season}
+                </div>
+                <div>
+                  <strong>Capacity: </strong>
+                  {product.capacity}
+                </div>
+                <div>
+                  <strong>Packed Weight: </strong>
+                  {product.packed_weight}
+                </div>
+                <div>
+                  <strong>Floor Dimensions: </strong>
+                  {product.floor_dimensions}
+                </div>
+                <div>
+                  <strong>Door Count: </strong>
+                  {product.door_count}
+                </div>
+                <div>
+                  <strong>Canopy Fabric: </strong>
+                  {product.canopy_fabric}
+                </div>
+                <div>
+                  <strong>Floor Fabric: </strong>
+                  {product.floor_fabric}
+                </div>
               </ListGroup.Item>
             </ListGroup>
-          </Card>
-        </Col>
-      </Row>
+          </Col>
+          <Col md={3}>
+            <Card>
+              <ListGroup variant='flush'>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Price:</Col>
+                    <Col>
+                      <strong>{product.price}</strong>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Status:</Col>
+                    <Col>
+                      {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Button
+                    className='btn-block btn-dark'
+                    type='button'
+                    disabled={product.countInStock === 0}
+                  >
+                    Add to Cart
+                  </Button>
+                </ListGroup.Item>
+              </ListGroup>
+            </Card>
+          </Col>
+        </Row>
+      )}
+
       <Link className='btn btn-dark my-3' to='/'>
         Go Back
       </Link>
