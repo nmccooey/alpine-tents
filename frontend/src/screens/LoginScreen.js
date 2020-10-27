@@ -31,7 +31,7 @@ const LoginScreen = ({ location, history }) => {
 
   return (
     <FormContainer>
-      <h1 className='text-center pt-4'>Login</h1>
+      <h1 className='text-center pt-4'>LOGIN</h1>
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
