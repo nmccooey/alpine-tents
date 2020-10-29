@@ -14,13 +14,13 @@ const ProfileScreen = ({ location, history }) => {
 
   const dispatch = useDispatch();
 
-  const userDetails = useSelector(state => state.userDetails);
+  const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
 
-  const userLogin = useSelector(state => state.userLogin);
+  const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-  const userUpdateProfile = useSelector(state => state.userUpdateProfile);
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
   const { success } = userUpdateProfile;
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const ProfileScreen = ({ location, history }) => {
     }
   }, [dispatch, history, userInfo, user]);
 
-  const submitHandler = e => {
+  const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       setMessage("Passwords do not match");
@@ -48,59 +48,59 @@ const ProfileScreen = ({ location, history }) => {
   return (
     <Row>
       <Col md={3}>
-        <h2 className='pt-4'>USER PROFILE</h2>
-        {message && <Message variant='danger'>{message}</Message>}
-        {error && <Message variant='danger'>{error}</Message>}
-        {success && <Message variant='success'>Profile Updated</Message>}
+        <h2 className="pt-4">USER PROFILE</h2>
+        {message && <Message variant="danger">{message}</Message>}
+        {error && <Message variant="danger">{error}</Message>}
+        {success && <Message variant="success">Profile Updated</Message>}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
-          <Form.Group controlId='name'>
+          <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
             <Form.Control
-              type='name'
-              placeholder='Enter name'
+              type="name"
+              placeholder="Enter name"
               value={name}
-              onChange={e => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
-          <Form.Group controlId='email'>
+          <Form.Group controlId="email">
             <Form.Label>Email</Form.Label>
             <Form.Control
-              type='email'
-              placeholder='Enter email'
+              type="email"
+              placeholder="Enter email"
               value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
-          <Form.Group controlId='password'>
+          <Form.Group controlId="password">
             <Form.Label>Password</Form.Label>
             <Form.Control
-              type='password'
-              placeholder='Enter password'
+              type="password"
+              placeholder="Enter password"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
-          <Form.Group controlId='confirmPassword'>
+          <Form.Group controlId="confirmPassword">
             <Form.Label>Confirm Password</Form.Label>
             <Form.Control
-              type='password'
-              placeholder='Confirm password'
+              type="password"
+              placeholder="Confirm password"
               value={confirmPassword}
-              onChange={e => setConfirmPassword(e.target.value)}
+              onChange={(e) => setConfirmPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
 
-          <Button type='submit' variant='primary'>
+          <Button type="submit" variant="primary">
             Update
           </Button>
         </Form>
       </Col>
       <Col md={9}>
-        <h2 className='pt-4'>MY ORDERS</h2>
+        <h2 className="pt-4">MY ORDERS</h2>
       </Col>
     </Row>
   );
