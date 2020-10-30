@@ -20,7 +20,7 @@ const ProductScreen = ({ history, match }) => {
 
   const dispatch = useDispatch();
 
-  const productDetails = useSelector(state => state.productDetails);
+  const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
@@ -36,14 +36,14 @@ const ProductScreen = ({ history, match }) => {
       {loading ? (
         <Loader />
       ) : error ? (
-        <Message variant='danger'>{error}</Message>
+        <Message variant="danger">{error}</Message>
       ) : (
-        <Row className='mt-5'>
+        <Row className="mt-5">
           <Col md={4}>
             <Image src={product.image} alt={product.name} fluid />
           </Col>
           <Col md={5}>
-            <ListGroup variant='flush'>
+            <ListGroup variant="flush">
               <ListGroup.Item>
                 <h2>{product.name}</h2>
               </ListGroup.Item>
@@ -81,6 +81,14 @@ const ProductScreen = ({ history, match }) => {
                   {product.door_count}
                 </div>
                 <div>
+                  <strong>Peak Height: </strong>
+                  {product.peak_height}
+                </div>
+                <div>
+                  <strong>Packed Size: </strong>
+                  {product.packed_size}
+                </div>
+                <div>
                   <strong>Canopy Fabric: </strong>
                   {product.canopy_fabric}
                 </div>
@@ -93,7 +101,7 @@ const ProductScreen = ({ history, match }) => {
           </Col>
           <Col md={3}>
             <Card>
-              <ListGroup variant='flush'>
+              <ListGroup variant="flush">
                 <ListGroup.Item>
                   <Row>
                     <Col>Price:</Col>
@@ -117,11 +125,11 @@ const ProductScreen = ({ history, match }) => {
                       <Col>Qty</Col>
                       <Col>
                         <Form.Control
-                          as='select'
+                          as="select"
                           value={qty}
-                          onChange={e => setQty(e.target.value)}
+                          onChange={(e) => setQty(e.target.value)}
                         >
-                          {[...Array(product.countInStock).keys()].map(x => (
+                          {[...Array(product.countInStock).keys()].map((x) => (
                             <option key={x + 1} value={x + 1}>
                               {x + 1}
                             </option>
@@ -135,8 +143,8 @@ const ProductScreen = ({ history, match }) => {
                 <ListGroup.Item>
                   <Button
                     onClick={addToCardHandler}
-                    className='btn-block btn-dark'
-                    type='button'
+                    className="btn-block btn-dark"
+                    type="button"
                     disabled={product.countInStock === 0}
                   >
                     Add to Cart
@@ -148,7 +156,7 @@ const ProductScreen = ({ history, match }) => {
         </Row>
       )}
 
-      <Link className='btn btn-dark my-3' to='/'>
+      <Link className="btn btn-dark my-3" to="/">
         Go Back
       </Link>
     </>
