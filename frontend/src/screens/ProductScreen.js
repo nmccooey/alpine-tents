@@ -33,6 +33,9 @@ const ProductScreen = ({ history, match }) => {
 
   return (
     <>
+      <Link className="btn btn-dark my-3" to="/">
+        Go Back
+      </Link>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -155,10 +158,6 @@ const ProductScreen = ({ history, match }) => {
           </Col>
         </Row>
       )}
-
-      <Link className="btn btn-dark my-3" to="/">
-        Go Back
-      </Link>
     </>
   );
 };
