@@ -56,7 +56,6 @@ const createProduct = asyncHandler(async (req, res) => {
     door_count: "2 doors",
     canopy_fabric: "75-denier polyester taffeta",
     floor_fabric: "68-denier polyester",
-    category: "Sample category",
     countInStock: 0,
     numReviews: 0,
     description: "Sample description",
@@ -85,7 +84,6 @@ const updateProduct = asyncHandler(async (req, res) => {
     door_count,
     canopy_fabric,
     floor_fabric,
-    category,
     countInStock,
   } = req.body;
 
@@ -106,7 +104,6 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.door_count = door_count;
     product.canopy_fabric = canopy_fabric;
     product.floor_fabric = floor_fabric;
-    product.category = category;
     product.countInStock = countInStock;
 
     const updatedProduct = await product.save();

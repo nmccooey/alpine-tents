@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
-import { listProductDetails } from "../actions/productActions";
+import { listProductDetails, updateProduct } from "../actions/productActions";
+import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id;
@@ -23,7 +24,6 @@ const ProductEditScreen = ({ match, history }) => {
   const [door_count, setDoorCount] = useState("");
   const [canopy_fabric, setCanopyFabric] = useState("");
   const [floor_fabric, setFloorFabric] = useState("");
-  const [category, setCategory] = useState("");
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
 
@@ -32,32 +32,62 @@ const ProductEditScreen = ({ match, history }) => {
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
+  const productUpdate = useSelector((state) => state.productUpdate);
+  const {
+    loading: loadingUpdate,
+    error: errorUpdate,
+    success: successUpdate,
+  } = productUpdate;
+
   useEffect(() => {
-    if (!product.name || product._id !== productId) {
-      dispatch(listProductDetails(productId));
+    if (successUpdate) {
+      dispatch({ type: PRODUCT_UPDATE_RESET });
+      history.push("/admin/productlist");
     } else {
-      setName(product.name);
-      setPrice(product.price);
-      setImage(product.image);
-      setBrand(product.brand);
-      setSeason(product.season);
-      setCapacity(product.capacity);
-      setPackedWeight(product.packed_weight);
-      setPackedSize(product.packed_size);
-      setFloorDimensions(product.floor_dimensions);
-      setPeakHeight(product.peak_height);
-      setDoorCount(product.door_count);
-      setCanopyFabric(product.canopy_fabric);
-      setFloorFabric(product.foor_fabric);
-      setCategory(product.category);
-      setCountInStock(product.countInSock);
-      setDescription(product.description);
+      if (!product.name || product._id !== productId) {
+        dispatch(listProductDetails(productId));
+      } else {
+        setName(product.name);
+        setPrice(product.price);
+        setImage(product.image);
+        setBrand(product.brand);
+        setSeason(product.season);
+        setCapacity(product.capacity);
+        setPackedWeight(product.packed_weight);
+        setPackedSize(product.packed_size);
+        setFloorDimensions(product.floor_dimensions);
+        setPeakHeight(product.peak_height);
+        setDoorCount(product.door_count);
+        setCanopyFabric(product.canopy_fabric);
+        setFloorFabric(product.floor_fabric);
+        setCountInStock(product.countInStock);
+        setDescription(product.description);
+      }
     }
-  }, [dispatch, history, productId, product]);
+  }, [dispatch, history, productId, product, successUpdate]);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // UPDATE PRODUCT
+    dispatch(
+      updateProduct({
+        _id: productId,
+        name,
+        price,
+        image,
+        brand,
+        season,
+        capacity,
+        packed_weight,
+        packed_size,
+        floor_dimensions,
+        peak_height,
+        door_count,
+        canopy_fabric,
+        floor_fabric,
+        description,
+        countInStock,
+      })
+    );
   };
 
   return (
@@ -71,6 +101,8 @@ const ProductEditScreen = ({ match, history }) => {
       </Link>
       <FormContainer>
         <h1>Edit Product</h1>
+        {loadingUpdate && <Loader />}
+        {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
         {loading ? (
           <Loader />
         ) : error ? (
@@ -214,16 +246,6 @@ const ProductEditScreen = ({ match, history }) => {
                 placeholder="Enter countInStock"
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
-
-            <Form.Group controlId="category">
-              <Form.Label>Category</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter category"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
