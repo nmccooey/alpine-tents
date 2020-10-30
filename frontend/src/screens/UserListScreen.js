@@ -6,15 +6,22 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { listUsers } from "../actions/userActions";
 
-const UserListScreen = () => {
+const UserListScreen = ({ history }) => {
   const dispatch = useDispatch();
 
   const userList = useSelector((state) => state.userList);
   const { loading, error, users } = userList;
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   useEffect(() => {
-    dispatch(listUsers());
-  }, [dispatch]);
+    if (userInfo && userInfo.isAdmin) {
+      dispatch(listUsers());
+    } else {
+      history.push("/login");
+    }
+  }, [dispatch, history]);
 
   const deleteHandler = (id) => {
     console.log("delete");
@@ -55,13 +62,13 @@ const UserListScreen = () => {
                 </td>
                 <td>
                   <LinkContainer to={`/user/${user._id}/edit`}>
-                    <Button variant="light" className="btn-sm">
+                    <Button variant="dark" className="btn-sm btn-dark ml-2">
                       <i className="fas fa-edit"></i>
                     </Button>
                   </LinkContainer>
                   <Button
                     variant="danger"
-                    className="btn-sm"
+                    className="btn-sm ml-2"
                     onClick={() => deleteHandler(user._id)}
                   >
                     <i className="fas fa-trash"></i>
