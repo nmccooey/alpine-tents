@@ -4,17 +4,17 @@
 
 ## Homepage
 
-![screenshot](https://github.com/nmccooey/alpine-tents/blob/master/screenshots/home.png)
+![screenshot](https://github.com/nmccooey/alpine-tents/blob/main/screenshots/home.png)
 
 ### Shopping Cart
 
-![screenshot](https://github.com/nmccooey/alpine-tents/blob/master/screenshots/cart.png)
+![screenshot](https://github.com/nmccooey/alpine-tents/blob/main/screenshots/cart.png)
 
 ### Admin Account (product, user, and order management)
 
-![screenshot](https://github.com/nmccooey/alpine-tents/blob/master/screenshots/admin-users.png)
-![screenshot](https://github.com/nmccooey/alpine-tents/blob/master/screenshots/admin-products.png)
-![screenshot](https://github.com/nmccooey/alpine-tents/blob/master/screenshots/admin-orders.png)
+![screenshot](https://github.com/nmccooey/alpine-tents/blob/main/screenshots/admin-users.png)
+![screenshot](https://github.com/nmccooey/alpine-tents/blob/main/screenshots/admin-products.png)
+![screenshot](https://github.com/nmccooey/alpine-tents/blob/main/screenshots/admin-orders.png)
 
 ## Other Features
 
