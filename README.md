@@ -2,6 +2,31 @@
 
 > eCommerce store built with the React, Redux, Express, Node, and MongoDB.
 
+## Homepage
+
+![screenshot](https://github.com/nmccooey/alpine-tents/blob/master/screenshots/home.png)
+
+### Shopping Cart
+
+![screenshot](https://github.com/nmccooey/alpine-tents/blob/master/screenshots/cart.png)
+
+### Admin Account (product, user, and order management)
+
+![screenshot](https://github.com/nmccooey/alpine-tents/blob/master/screenshots/admin-users.png)
+![screenshot](https://github.com/nmccooey/alpine-tents/blob/master/screenshots/admin-products.png)
+![screenshot](https://github.com/nmccooey/alpine-tents/blob/master/screenshots/admin-orders.png)
+
+## Other Features
+
+- Product reviews and ratings
+- Product carousel
+- Pagination
+- Product search feature
+- User profile with orders
+- Checkout process (shipping, payment method, order confirmation)
+- PayPal / credit card integration
+- Database seeder (products & users)
+
 ## Usage
 
 ### ES Modules
@@ -36,4 +61,29 @@ npm run dev
 
 # Run backend only
 npm run server
+```
+
+### Seeding
+
+You can seed the database with some sample users and products as well as delete all the data.
+
+```
+# Import data
+npm run data:import
+
+# Destroy data
+npm run data:destroy
+```
+
+```
+Sample User Logins
+
+admin@example.com (Admin)
+123456
+
+john@example.com (Customer)
+123456
+
+jane@example.com (Customer)
+123456
 ```
