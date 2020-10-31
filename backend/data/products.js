@@ -16,8 +16,8 @@ const products = [
     floor_fabric: "68-denier polyester, 3000mm polyurethane coating",
     price: 159.95,
     countInStock: 10,
-    rating: 4.5,
-    numReviews: 12,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "NEMO Dagger 2 Tent",
@@ -36,8 +36,8 @@ const products = [
     floor_fabric: "30-denier polyurethane-coated ripstop nylon",
     price: 429.95,
     countInStock: 10,
-    rating: 4.5,
-    numReviews: 12,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Big Agnes Tiger Wall UL2 Tent",
@@ -56,8 +56,8 @@ const products = [
     floor_fabric: "Silicone-treated ripstop nylon",
     price: 399.95,
     countInStock: 0,
-    rating: 4,
-    numReviews: 9,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Kelty Discovery Dome 4 Tent",
@@ -76,8 +76,8 @@ const products = [
     floor_fabric: "68-denier polyester with 1,200mm coating",
     price: 99.95,
     countInStock: 14,
-    rating: 2.5,
-    numReviews: 12,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Mountain Hardwear Trango 4 Tent",
@@ -96,8 +96,8 @@ const products = [
     floor_fabric: "70-denier nylon taffeta, rated 10,000mm waterproof",
     price: 929.95,
     countInStock: 11,
-    rating: 5,
-    numReviews: 9,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Black Diamond Fitzroy Tent",
@@ -116,8 +116,8 @@ const products = [
     floor_fabric: "Unavailable",
     price: 899.95,
     countInStock: 5,
-    rating: 4.5,
-    numReviews: 6,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "NEMO Chogori 3 Tent",
@@ -136,8 +136,8 @@ const products = [
     floor_fabric: "PeU nylon (5,000mm)",
     price: 899.95,
     countInStock: 10,
-    rating: 4,
-    numReviews: 2,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: "Big Agnes Battle Mountain 2 Tent",
@@ -156,8 +156,8 @@ const products = [
     floor_fabric: "Nylon taffeta",
     price: 699.95,
     countInStock: 5,
-    rating: 4.5,
-    numReviews: 7,
+    rating: 0,
+    numReviews: 0,
   },
 ];
 
